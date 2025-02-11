@@ -1,3 +1,36 @@
+const express = require("express");
+const router = express.Router();
+
+// index
+router.get('/pizzas', function (req, res) {
+  res.send('Lista dei post');
+});
+
+// show
+router.get('/pizzas/:id', function (req, res) {
+  res.send('Dettagli del post ' + req.params.id);
+});
+
+// store
+router.post('/pizzas', function (req, res) {
+  res.send('Creazione nuovo post');
+});
+
+// update
+router.put('/pizzas/:id', function (req, res) {
+  res.send('Modifica integrale del post ' + req.params.id);
+});
+
+// modify
+router.patch('/pizzas/:id', function (req, res) {
+  res.send('Modifica parziale del post ' + req.params.id);
+});
+
+// destroy
+router.delete('/pizzas/:id', function (req, res) {
+  res.send('Eliminazione del post ' + req.params.id);
+});
+
 const posts = [
   {
     title: "Ciambellone",
